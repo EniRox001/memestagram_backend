@@ -15,14 +15,15 @@ Future<Response> onRequest(RequestContext context) async {
   // Split the string gotten into a new array
   final splitString = body.split(' ');
 
-  // await connectDB();
+  await connectDB();
 
   // Initialize variables to the splitString array
   var objectId = '';
-  var username = splitString[0].toLowerCase();
-  var password = splitString[1];
+  var username = splitString[0].trim().toLowerCase();
+  var password = splitString[1].trim();
 
   // Find the user collection based on the data gotten
+
   await userCollection
       .find({
         'username': username,
