@@ -1,8 +1,8 @@
 import 'package:dart_frog/dart_frog.dart';
 import '../cloud/db.dart';
 
-Response onRequest(RequestContext context) {
+Future<Response> onRequest(RequestContext context) async {
   //Initialize the database when the app opens
-  connectDB();
+  await connectDB();
   return Response(body: 'Database connected successfully');
 }

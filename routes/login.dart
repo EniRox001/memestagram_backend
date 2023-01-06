@@ -1,5 +1,4 @@
 import 'package:dart_frog/dart_frog.dart';
-import 'package:mongo_dart/mongo_dart.dart';
 import '../cloud/db.dart';
 
 Future<Response> onRequest(RequestContext context) async {
@@ -14,8 +13,6 @@ Future<Response> onRequest(RequestContext context) async {
 
   // Split the string gotten into a new array
   final splitString = body.split(' ');
-
-  await connectDB();
 
   // Initialize variables to the splitString array
   var objectId = '';
